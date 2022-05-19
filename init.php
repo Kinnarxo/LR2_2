@@ -1,15 +1,14 @@
 <?php
     $session_num = -1;
     $file_session_nums = "sessions.csv";
-    $session_dir = "";
     $session_key_length = 64;
-    $templ = "../sessions/%a%/%a%.csv";
+    $templ = "../data/sessions/%a%/%a%.csv";
     $f = fopen($file_session_nums, 'r+');
+    flock($f, LOCK_EX);
 
     if (key_exists("session_num", $_POST))
     {
         $session_num = (int)$_POST["session_num"];
-        $session_dir = fopen(preg_replace("/%a%/", $session_num, $templ), 'r+');
         while (!feof($f))       // date rewriting
         {   $w = array();
             $w = fgetcsv($f, 1024, ',');
@@ -34,14 +33,16 @@
             }
             if ($flag1) { fseek($f, 0, SEEK_SET);  $flag1 = false;}
         }
+        $ff = fopen(preg_replace('/%a%/', $session_num,"../data/sessions/%a%/%a%.csv"), 'x');
+        fwrite($ff, '0,0');
         fwrite($f, '\n' . $session_num . ',' . time());
-        mkdir('../sessions/'.$session_num);
-        $session_dir = fopen(preg_replace("/%a%/", $session_num, $templ), 'w+');
+        mkdir('../data/sessions/'.$session_num);
     }
 // Check if some IDs in file expired
     fseek($f, 0, SEEK_SET);
     $file_string_array = array();
-    foreach (explode(trim(file_get_contents($f, false, null, SEEK_SET)), '\n') as $v)
+    $arr = explode(trim(file_get_contents($f, false, null, SEEK_SET)), '\n');
+    foreach ($arr as $v)
     {   $mass = array();
         $mass = (str_getcsv(trim($v), ','));
         if ($mass[1] > time())
@@ -59,4 +60,6 @@
     }
     $file_string = implode('\n', $file_string_array);
     file_put_contents($f, $file_string);
+    flock($f, LOCK_UN);
+    fclose($f);
 ?>
