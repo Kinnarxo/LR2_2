@@ -5,23 +5,26 @@
 <html>
 <head>
 <meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
-<link type='text/css' href='%style%' rel='stylesheet'>
+<link type='text/css' href='%style_name%_styles.css' rel='stylesheet'>
+<script src='jquery-3.6.0.min.js'></script>
+<script src='%script_name%.js'></script>
 <title>%title%</title>
 </head>
 <body>
+<div id='backgr'></div>
 %body%
 </body>
 </html>";
     $mas['nav_panel'] = "<div id='navi'>
 <div class='left_block'>%session_num%</div>
 <div class='center_block'></div>
-<div class='right_block' id='total_price'>%total_price%</div>
+<div class='right_block' id='total_price'>%total_price% P<div id='basket_button'><img src='data/images/app/basket.png' height='60px'></div></div>
 </div>";
-    $mas['main'] = "<div id='main'>%main_content%</div>";
+    $mas['main'] = "<div id='main'>%main_content%</div><div id='main_bg'></div>";
     $mas['product'] = "<div class='product'>%prod_image% %prod_description% %page_type_depend_options%</div>";
     $mas['prod_image'] = "<picture class='prod_image'>
-<source srcset='%image_name%.webp' type='image/webp'>
-<img src='%image_name%.jpg'>
+<source srcset='%image_name%.webp' media='(max-width: 200px)' type='image/webp'>
+<img src='%image_name%.jpg' height='200px'>
 </picture>";
     $mas['prod_description'] = "<div class='prod_description'>%text%</div>";
     $mas['prod_options_catalog'] = "<div class='add_prod' id='adder_%prod_id%'>Добавить в корзину</div>";
@@ -39,9 +42,10 @@
     $mas['author3'] = "Сошников С.А.";
     $mas['author4'] = "Однооркова А.В.";
     $mas['bottom_middle_text'] = "";
-    $mas['contacts1'] = "<a href='https://vk.com/shrek_i'>";
+    $mas['contacts1'] = "<a href='https://vk.com/shrek_i'>Vk</a>";
     $mas['body_catalog'] = "";
-    $mas['body_basket'] = "";
+    $mas['basket'] = "<div id='basket_body'>%body%</div>";
+
 
 //not page-building templates
     $mas['session_file'] = "data/sessions/%a%.csv";

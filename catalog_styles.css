@@ -1,0 +1,154 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial";
+    scroll-behavior: smooth;
+}
+
+#backgr {
+    z-index: -1;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #181818 10%, #838383 50%, #181818 90%);
+}
+
+#navi > *    {
+    position: absolute;
+    height: inherit;
+}
+
+#navi   {
+    position: fixed;
+    z-index: 100;
+    height: 60px;
+    width: 100%;
+    background: linear-gradient(to right, #f1e2de 40%, #9b9b9b 80%);
+}
+
+.left_block {
+    width: 20%;
+    padding: 10px;
+}
+
+.center_block   {
+    left:20%;
+    width: 60%;
+    border-right: #706d6d solid 3px;
+    box-sizing: border-box;
+}
+
+.right_block    {
+    right: 0;
+    width: 20%
+}
+
+#main   {
+    z-index: 20;
+    position: absolute;
+    left: 25%;
+    top: 100px;
+    width: 50%;
+}
+
+#main_bg {
+    z-index: 5;
+    position: fixed;
+    left: 25%;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+    box-shadow: 0px 0px 8px  white;
+    background-color: #f6f6f6;
+}
+
+.product    {
+    margin-top: 25px;
+    font-size: 20px;
+    height: 200px;
+    position: relative;
+    width: 80%;
+    left: 10%;
+    box-shadow: 0px 0px 2px #706d6d;
+    background-color: white;
+}
+
+#bottom {
+    z-index: 100;
+    border-top: black 2px solid;
+    position: fixed;
+    width: 100%;
+    height: 150px;
+    bottom: 0;
+    background: linear-gradient(to right, #d0d0d0 33%, #b4b4b4 50%, #d0d0d0 67%);
+}
+
+#bottom > *    {
+    position: absolute;
+    height: inherit;
+}
+
+a   {
+    font-size: 20px;
+}
+
+.add_prod   {
+    padding: 1px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    border: solid 2px gray;
+}
+
+.add_prod:hover {
+    background-color: #9b9b9b;
+}
+
+.prod_description   {
+    width: 200px;
+    text-align: right;
+    height: 25px;
+    overflow: hidden;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+img {
+    height: 200px;
+}
+
+#total_price    {
+    text-align: center;
+    font-size: 30px;
+}
+
+#basket_button  {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 60px;
+}
+
+#basket_button > * {
+    height: 60px;
+}
+
+#basket_button:hover    {
+    background-color: #838383;
+}
+
+#basket_body    {
+    visibility: hidden;
+    position: fixed;
+    top:60px;
+    right:3px;
+    width:20%;
+    height: 100%;
+    background-color: #dedede;
+}
+
+#Zaglushka  {
+    height: 160px;
+}

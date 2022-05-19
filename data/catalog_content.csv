@@ -1,2 +1,32 @@
-id,name,image,count
-1,Лего звёздные войны,/toys/lego_star_wars.webp,100
+1,Граф Монте-Кристо Александр Дюма,/classic/TheCountOfMonteCristo_Dumas,300,1000
+2,Рождественская песнь Чарльз Диккенс,/classic/ChristmasCarol_Dickens,120,760
+3,Оно Стивен Кинг,/horror/It_King,200,1100
+4,Ночная тьма Агата Кристи,/detective/EndlessNight_Christie,70,200
+5,Лощина Агата Кристи,/detective/TheHollow_Christie,150,150
+6,Немой свидетель Агата Кристи,/detective/DumbWitness_Christie,80,150
+7,Карибская тайна Агата Кристи,/detective/CaribbeanMystery_Christie,110,150
+8,Убийство в «Восточном экспрессе» Агата Кристи,/detective/MurderOnTheOrientExpress_Christie,1000,300
+9,Противостояние Стивен Кинг,/horror/TheStand_King,200,700
+10,Сияние Стивен Кинг,/horror/TheShining_King,700,400
+11,В высших сферах Артур Хейли,/occupationnovel/InHighPlaces_Hailey,140,250
+12,Вечерние новости Артур Хейли,/occupationnovel/TheEveningNews_Hailey,500,270
+13,Колеса Артур Хейли,/occupationnovel/Wheels_Hailey,150,200
+14,Отель Артур Хейли,/occupationnovel/Hotel_Hailey,700,300
+15,Клиника Артур Хейли,/occupationnovel/TheFinalDiagnosis_Hailey,400,250
+16,Менялы Артур Хейли,/occupationnovel/TheMoneychangers_Hailey,250,200
+17,Аэропорт Артур Хейли,/occupationnovel/Airport_Hailey,700,300
+18,Маленькие женщины Луиза Мэй Олкотт,/novel/LittleWomen_Alcott,500,400
+19,Хорошие жены Луиза Мэй Олкотт,/novel/GoodWives_Alcott,150,300
+20,Портрет Дориана Грея Оскар Уайльд,/classic/ThePictureOfDorianGray_Wilde,200,400
+21,Джейн Эйр Шарлотта Бронте,/novel/JaneEyre_Bronte,300,450
+22,Доводы рассудка Джейн Остен,/novel/Persuasion_Austen,250,300
+23,Мэнсфилд-парк Джейн Остен,/novel/MansfieldPark_Austen,70,200
+24,Чувство и чувствительность Джейн Остен,/novel/SenseAndSensibility_Austen,80,200
+25,Эмма Джейн Остен,/novel/Emma_Austen,200,300
+26,Гордость и предубеждение Джейн Остен,/novel/PrideAndPrejudice_Austen,500,800
+27,Гарри Поттер собрание Дж. К. Роулинг,/fantasy/HarryPotter_Rowling,20,4000
+28,Властелин колец собрание Дж. Р. Р. Толкиен,/fantasy/LordOfTheRings_Tolkien,50,3000
+29,Старик и море Эрнест Хемингуэй,/classic/TheOldManAndTheSea_Hemingway,130,150
+30,Великий Гэтсби Фрэнсис Скотт Фицджеральд,/classic/TheGreatGatsby_Fitzgerald,80,400
+31,Лего звёздные войны,/toys/lego_star_wars,100,19000
+32,Микрофон Fifine,/technik/fifine,20,2500
