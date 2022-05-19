@@ -1,6 +1,6 @@
 <?php
     $session_num = -1;
-    $file_session_nums = "sessions.csv";
+    $file_session_nums = "data/sessions.csv";
     $session_key_length = 64;
     $templ = "../data/sessions/%a%/%a%.csv";
     $f = fopen($file_session_nums, 'r+');
@@ -21,22 +21,21 @@
     }
     else
     {
-        $session_num = random_bytes($session_key_length);
+        $session_num = sha1(random_bytes($session_key_length));
         $flag1 = false;
         while (!feof($f))
         {   $w = array();
             $w = fgetcsv($f, 1024, ',');
-            while ($w[0] == $session_num)
+            while ($w && $w[0] == $session_num)
             {
-                $session_num = random_bytes($session_key_length);
+                $session_num = sha1(random_bytes($session_key_length));
                 $flag1 = true;
             }
             if ($flag1) { fseek($f, 0, SEEK_SET);  $flag1 = false;}
         }
-        $ff = fopen(preg_replace('/%a%/', $session_num,"../data/sessions/%a%/%a%.csv"), 'x');
+        $ff = fopen(preg_replace('/%a%/', $session_num,"data/sessions/%a%.csv"), 'x');
         fwrite($ff, '0,0');
         fwrite($f, '\n' . $session_num . ',' . time());
-        mkdir('../data/sessions/'.$session_num);
     }
 // Check if some IDs in file expired
     fseek($f, 0, SEEK_SET);

@@ -32,8 +32,6 @@
 <div class = 'center_block'><div class='middle_text'>%bottom_middle_text%</div></div>
 <div class='right_block'><ul>
 <li>%contacts1%</li>
-<li>%contacts2%</li>
-<li>%contacts3%</li>
 </ul></div>
 </div>";
     $mas['author1'] = "Павленко М.С.";
@@ -42,11 +40,9 @@
     $mas['author4'] = "Однооркова А.В.";
     $mas['bottom_middle_text'] = "";
     $mas['contacts1'] = "<a href='https://vk.com/shrek_i'>";
-    $mas['contacts2'] = "<a href=''>";
-    $mas['contacts3'] = "<a href=''>";
     $mas['body_catalog'] = "";
     $mas['body_basket'] = "";
 
 //not page-building templates
-    $mas['session_file'] = "../data/sessions/%a%/%a%.csv";
+    $mas['session_file'] = "data/sessions/%a%.csv";
 ?>

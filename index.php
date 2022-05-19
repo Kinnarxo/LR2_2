@@ -9,7 +9,18 @@
     $total_price = (int)trim($session_info_arr[1]);
 
     switch ($page_type) {
-        case 'catalog':
+        case 'basket':
+        {
+            $basket_goods = array();
+            foreach(explode('\n', file_get_contents($session_file)) as $v)
+            {
+                $basket_goods[] = str_getcsv($v, ',');
+            }
+
+            $title = "Корзина";
+            break;
+        }
+        default:
         {
             $file = fopen('/data/catalog_content.csv', 'r');
             flock($file, LOCK_EX); $file_str = explode('\n', file_get_contents($file)); flock($file, LOCK_UN); fclose($file);
@@ -24,25 +35,20 @@
             $products_array = array();
             foreach ($goods as $v)
             {
-                $prod_image = preg_replace(,,$mas['prod_image']);
-                $prod_description = preg_replace(,,$mas['prod_description']);
-                $page_type_depend_options = preg_replace(,,$mas['prod_options_catalog');
+                $prod_image = preg_replace('/%image_name%/','data/images/goods' . $v[2],$mas['prod_image']);
+                $prod_description = preg_replace('/%text%/',$v[1],$mas['prod_description']);
+                $page_type_depend_options = preg_replace('/%prod_id%/', $v[0],$mas['prod_options_catalog']);
                 $products_array[] = preg_replace(array('/%prod_image%/', '/%prod_description%/', '/%page_type_depend_options%/'), array($prod_image, $prod_description, $page_type_depend_options),$mas['product']);
             }
+            $products = implode("",$products_array);
+            $main_array[] = $products;
+            $main = implode("", $main_array);
             $body_array[] = $main;
+            $bottom = preg_replace(array('/%author1%/','/%author2%/','/%author3%/','/%author4%/','/%bottom_middle_text%/','/%contacts1%/'),array($mas['author1'],$mas['author2'],$mas['author3'],$mas['author4'],$mas['bottom_middle_text'],$mas['contacts1']),$mas['bottom']);
+            $body_array[] = $bottom;
 
+            $body = implode("", $body_array);
             $title = "Каталог";
-            break;
-        }
-        case 'basket':
-        {
-            $basket_goods = array();
-            foreach(explode('\n', file_get_contents($session_file)) as $v)
-            {
-                $basket_goods[] = str_getcsv($v, ',');
-            }
-
-            $title = "Корзина";
             break;
         }
     }
